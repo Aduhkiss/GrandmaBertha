@@ -105,7 +105,7 @@ public class PlayerControl extends ListenerAdapter
         	}
         	
         	// Also let the user know that we will be playing their song soon
-        	event.getChannel().sendMessage("Request receieved! Downloading song, will play when finished!");
+        	event.getChannel().sendMessage("Request receieved! Downloading song, will play when finished!").queue();
         	
             VoiceChannel connectedChannel = event.getMember().getVoiceState().getChannel();
             // Checks if they are in a channel -- not being in a channel means that the variable = null.
