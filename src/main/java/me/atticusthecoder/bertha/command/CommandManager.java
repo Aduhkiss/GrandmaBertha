@@ -3,8 +3,9 @@ package me.atticusthecoder.bertha.command;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.atticusthecoder.bertha.command.cmds.HelpCommand;
-import me.atticusthecoder.bertha.command.cmds.MusicHelpCommand;
+import me.atticusthecoder.bertha.command.cmds.fun.EightBallCommand;
+import me.atticusthecoder.bertha.command.cmds.information.HelpCommand;
+import me.atticusthecoder.bertha.command.cmds.information.MusicHelpCommand;
 import me.atticusthecoder.bertha.common.Command;
 import me.atticusthecoder.bertha.common.Multithreading;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
@@ -32,6 +33,7 @@ public class CommandManager extends ListenerAdapter {
 			// Register commands
 			commands.add(new HelpCommand());
 			commands.add(new MusicHelpCommand());
+			commands.add(new EightBallCommand());
 		});
 	}
 	
