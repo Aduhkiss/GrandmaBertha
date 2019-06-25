@@ -13,13 +13,14 @@ public class HelpCommand extends Command {
 
 	@Override
 	public void execute(MessageReceivedEvent event) {
+		String pre = CommandManager.get().PREFIX;
 		event.getChannel().sendMessage("Check your DM's!");
 		MessageBuilder msg = new MessageBuilder();
 		
 		msg.addText("My command list:");
 		
 		for(Command cmd : CommandManager.get().commands) {
-			msg.addText(cmd.getName() + " = " + cmd.getDescription());
+			msg.addText(pre + cmd.getName() + " = " + cmd.getDescription());
 		}
 		
 		msg.send(event.getAuthor());

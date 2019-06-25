@@ -37,6 +37,9 @@ public class CommandManager extends ListenerAdapter {
 	
 	@Override
 	public void onMessageReceived(MessageReceivedEvent event) {
+		if(event.getAuthor().isBot()) {
+			return;
+		}
 		Multithreading.runAsync(() -> {
 			for(Command cmd : commands) {
 				if(event.getMessage().getContentRaw().startsWith(PREFIX + cmd.getName())) {

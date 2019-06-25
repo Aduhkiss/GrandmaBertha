@@ -8,14 +8,19 @@ import me.atticusthecoder.bertha.music.PlayerControl;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
+import net.dv8tion.jda.core.entities.Game;
+import net.dv8tion.jda.core.entities.Game.GameType;
+import net.dv8tion.jda.core.entities.Guild;
 
 public class Grandma {
 	private final String APP_ID = "592864986859175936";
 	
-	private boolean SELFBOT = false;
+	// Data
+	private int activeServers;
 	
 	private JDA jda;
 	public Grandma(String TOKEN) {
+		activeServers = 0;
 		try {
 			CommandManager.get().registerCommands();
 			
@@ -31,6 +36,22 @@ public class Grandma {
 		} catch (LoginException e) {
 			System.out.println("[Grandma Bertha] There was an error while logging into the Discord API!");
 		}
+		
+		// Once the bot is loaded, do some more basic startup stuff
+		// Grab a total of how many guilds we are in
+		updateGuildCount();
+		getJda().getPresence().setGame(Game.of(GameType.DEFAULT, ";" + "help"));
+	}
+	
+	public void updateGuildCount() {
+		activeServers = 0;
+		for(Guild server : jda.getGuilds()) {
+			activeServers++;
+		}
+	}
+	
+	public int getGuildCount() {
+		return activeServers;
 	}
 	
 	public JDA getJda() {

@@ -8,6 +8,9 @@ public class MessageLogger extends ListenerAdapter {
     @Override
     public void onMessageReceived(MessageReceivedEvent event)
     {
+		if(event.getAuthor().isBot()) {
+			return;
+		}
         if (event.isFromType(ChannelType.PRIVATE))
         {
             System.out.printf("[PM] %s: %s\n", event.getAuthor().getName(),
