@@ -5,8 +5,8 @@ import javax.security.auth.login.LoginException;
 import com.google.gson.Gson;
 
 import me.atticusthecoder.bertha.command.CommandManager;
-import me.atticusthecoder.bertha.common.HttpUtil;
 import me.atticusthecoder.bertha.common.PresenseData;
+import me.atticusthecoder.bertha.common.util.HttpUtil;
 import me.atticusthecoder.bertha.extralisteners.MessageLogger;
 import me.atticusthecoder.bertha.music.PlayerControl;
 import net.dv8tion.jda.core.AccountType;

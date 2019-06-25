@@ -1,4 +1,4 @@
-package me.atticusthecoder.bertha.common;
+package me.atticusthecoder.bertha.common.util;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
