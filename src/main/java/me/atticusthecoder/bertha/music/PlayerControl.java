@@ -1,5 +1,11 @@
 package me.atticusthecoder.bertha.music;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.logging.Level;
+
 import com.sedmelluq.discord.lavaplayer.player.AudioLoadResultHandler;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
@@ -22,17 +28,9 @@ import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.entities.VoiceChannel;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.exceptions.InsufficientPermissionException;
 import net.dv8tion.jda.core.exceptions.PermissionException;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.logging.Level;
 
 public class PlayerControl extends ListenerAdapter
 {
@@ -99,6 +97,16 @@ public class PlayerControl extends ListenerAdapter
         }
         else if (command[0].equals(pre + "play"))
         {
+        	
+        	try {
+        		event.getMessage().delete().complete();
+        	} catch(InsufficientPermissionException ex) {
+        		// Nothing.
+        	}
+        	
+        	// Also let the user know that we will be playing their song soon
+        	event.getChannel().sendMessage("Request receieved! Downloading song, will play when finished!");
+        	
             VoiceChannel connectedChannel = event.getMember().getVoiceState().getChannel();
             // Checks if they are in a channel -- not being in a channel means that the variable = null.
             if(connectedChannel == null) {
