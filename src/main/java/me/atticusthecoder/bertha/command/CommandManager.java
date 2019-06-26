@@ -5,6 +5,7 @@ import java.util.List;
 
 import me.atticusthecoder.bertha.command.cmds.fun.CoinflipCommand;
 import me.atticusthecoder.bertha.command.cmds.fun.EightBallCommand;
+import me.atticusthecoder.bertha.command.cmds.information.AboutCommand;
 import me.atticusthecoder.bertha.command.cmds.information.HelpCommand;
 import me.atticusthecoder.bertha.command.cmds.information.MusicHelpCommand;
 import me.atticusthecoder.bertha.command.cmds.interaction.HugCommand;
