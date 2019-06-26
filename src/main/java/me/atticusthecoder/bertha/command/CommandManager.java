@@ -8,6 +8,8 @@ import me.atticusthecoder.bertha.command.cmds.fun.EightBallCommand;
 import me.atticusthecoder.bertha.command.cmds.information.HelpCommand;
 import me.atticusthecoder.bertha.command.cmds.information.MusicHelpCommand;
 import me.atticusthecoder.bertha.command.cmds.interaction.HugCommand;
+import me.atticusthecoder.bertha.command.cmds.interaction.KissCommand;
+import me.atticusthecoder.bertha.command.cmds.interaction.SlapCommand;
 import me.atticusthecoder.bertha.common.Command;
 import me.atticusthecoder.bertha.common.Multithreading;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
@@ -32,14 +34,18 @@ public class CommandManager extends ListenerAdapter {
 			
 			commands = new ArrayList<Command>();
 			
-			// Register commands
+			// Information Commands
 			commands.add(new HelpCommand());
 			commands.add(new MusicHelpCommand());
 			
+			// Fun Commands
 			commands.add(new EightBallCommand());
 			commands.add(new CoinflipCommand());
 			
+			// Interaction Commands
 			commands.add(new HugCommand());
+			commands.add(new KissCommand());
+			commands.add(new SlapCommand());
 		});
 	}
 	

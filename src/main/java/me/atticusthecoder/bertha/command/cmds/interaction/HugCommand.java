@@ -1,6 +1,6 @@
 package me.atticusthecoder.bertha.command.cmds.interaction;
 
-import java.util.ArrayList;
+import java.awt.Color;
 import java.util.List;
 import java.util.Random;
 
@@ -40,6 +40,7 @@ public class HugCommand extends Command {
 		EmbedBuilder embed = new EmbedBuilder();
 		
 		embed.addField(event.getAuthor().getName() + " hugged " + targets.get(0).getEffectiveName() + "!", "", true);
+		embed.setColor(Color.GREEN);
 		
 		event.getChannel().sendMessage(embed.build()).queue();
 	}
