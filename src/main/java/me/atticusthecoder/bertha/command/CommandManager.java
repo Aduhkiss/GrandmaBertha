@@ -37,6 +37,7 @@ public class CommandManager extends ListenerAdapter {
 			// Information Commands
 			commands.add(new HelpCommand());
 			commands.add(new MusicHelpCommand());
+			commands.add(new AboutCommand());
 			
 			// Fun Commands
 			commands.add(new EightBallCommand());
