@@ -31,6 +31,8 @@ public class KissCommand extends Command {
 		
 		EmbedBuilder embed = new EmbedBuilder();
 		
+		event.getMessage().delete().complete();
+		
 		embed.addField(event.getAuthor().getName() + " kissed " + targets.get(0).getEffectiveName() + "!", "", true);
 		
 		embed.setColor(Color.PINK);

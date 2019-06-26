@@ -39,6 +39,8 @@ public class HugCommand extends Command {
 		
 		EmbedBuilder embed = new EmbedBuilder();
 		
+		event.getMessage().delete().complete();
+		
 		embed.addField(event.getAuthor().getName() + " hugged " + targets.get(0).getEffectiveName() + "!", "", true);
 		embed.setColor(Color.GREEN);
 		

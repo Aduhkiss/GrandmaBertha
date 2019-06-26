@@ -30,6 +30,7 @@ public class SlapCommand extends Command {
 		}
 		
 		EmbedBuilder embed = new EmbedBuilder();
+		event.getMessage().delete().complete();
 		
 		embed.addField(event.getAuthor().getName() + " slapped " + targets.get(0).getEffectiveName() + "!", "", true);
 		embed.setColor(Color.RED);
