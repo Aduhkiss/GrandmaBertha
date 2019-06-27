@@ -5,6 +5,8 @@ import java.util.List;
 
 import me.atticusthecoder.bertha.command.cmds.fun.CoinflipCommand;
 import me.atticusthecoder.bertha.command.cmds.fun.EightBallCommand;
+import me.atticusthecoder.bertha.command.cmds.hypixel.HypixelGuildCommand;
+import me.atticusthecoder.bertha.command.cmds.hypixel.HypixelPlayerCommand;
 import me.atticusthecoder.bertha.command.cmds.information.AboutCommand;
 import me.atticusthecoder.bertha.command.cmds.information.HelpCommand;
 import me.atticusthecoder.bertha.command.cmds.information.MusicHelpCommand;
@@ -48,6 +50,10 @@ public class CommandManager extends ListenerAdapter {
 			commands.add(new HugCommand());
 			commands.add(new KissCommand());
 			commands.add(new SlapCommand());
+			
+			// Hypixel Commands
+			commands.add(new HypixelPlayerCommand());
+			commands.add(new HypixelGuildCommand());
 		});
 	}
 	

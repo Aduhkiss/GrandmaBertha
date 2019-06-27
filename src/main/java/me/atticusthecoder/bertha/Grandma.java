@@ -6,6 +6,7 @@ import me.atticusthecoder.bertha.command.CommandManager;
 import me.atticusthecoder.bertha.common.PresenseData;
 import me.atticusthecoder.bertha.extralisteners.ChatBot;
 import me.atticusthecoder.bertha.extralisteners.MessageLogger;
+import me.atticusthecoder.bertha.hypixel.Hypixel;
 import me.atticusthecoder.bertha.music.PlayerControl;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
@@ -23,10 +24,15 @@ public class Grandma {
 	private JDA jda;
 	private PresenseData cachedData = null;
 	
+	public Hypixel hypixel;
+	public boolean hypixelApiEnabled = true;
+	
 	public Grandma(String TOKEN) {
 		activeServers = 0;
 		try {
 			CommandManager.get().registerCommands();
+			
+			hypixel = new Hypixel();
 			
 			jda = new JDABuilder(AccountType.BOT)
 					.setToken(TOKEN)
