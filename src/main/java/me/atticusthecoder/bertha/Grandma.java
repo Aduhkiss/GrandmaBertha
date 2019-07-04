@@ -3,7 +3,6 @@ package me.atticusthecoder.bertha;
 import javax.security.auth.login.LoginException;
 
 import me.atticusthecoder.bertha.command.CommandManager;
-import me.atticusthecoder.bertha.common.PresenseData;
 import me.atticusthecoder.bertha.extralisteners.ChatBot;
 import me.atticusthecoder.bertha.extralisteners.MessageLogger;
 import me.atticusthecoder.bertha.hypixel.Hypixel;
@@ -22,7 +21,7 @@ public class Grandma {
 	private int activeServers;
 	
 	private JDA jda;
-	private PresenseData cachedData = null;
+	//private PresenseData cachedData = null;
 	
 	public Hypixel hypixel;
 	public boolean hypixelApiEnabled = true;
@@ -62,7 +61,7 @@ public class Grandma {
 	
 	public void updateGuildCount() {
 		activeServers = 0;
-		for(Guild server : jda.getGuilds()) {
+		for(@SuppressWarnings("unused") Guild server : jda.getGuilds()) {
 			activeServers++;
 		}
 	}

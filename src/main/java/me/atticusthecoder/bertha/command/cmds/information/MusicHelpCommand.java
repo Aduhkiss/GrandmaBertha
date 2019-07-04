@@ -4,7 +4,6 @@ import java.awt.Color;
 
 import me.atticusthecoder.bertha.command.CommandManager;
 import me.atticusthecoder.bertha.common.Command;
-import me.atticusthecoder.bertha.common.MessageBuilder;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 

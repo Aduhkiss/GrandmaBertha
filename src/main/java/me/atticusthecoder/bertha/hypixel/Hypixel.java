@@ -6,7 +6,6 @@ import me.kbrewster.hypixelapi.HypixelAPI;
 public class Hypixel extends Module {
 	
 	private HypixelAPI api;
-	private String API_KEY = "";
 	
 	public Hypixel() {
 		super("Hypixel API", "Atticus Zambrana");

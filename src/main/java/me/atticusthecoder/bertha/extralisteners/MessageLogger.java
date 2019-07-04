@@ -1,6 +1,5 @@
 package me.atticusthecoder.bertha.extralisteners;
 
-import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
