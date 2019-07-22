@@ -31,7 +31,7 @@ public class JokeCommand extends Command {
 					e.printStackTrace();
 				}
 				//embed.clear()
-				m.editMessage(j.getJoke() + "\n\n" + j.getPunchline());
+				m.editMessage(j.getJoke() + "\n\n" + j.getPunchline()).queue();
 			}
 		}.start();
 		
