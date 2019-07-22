@@ -4,10 +4,12 @@ public class Joke {
 	
 	String theJoke;
 	String punchline;
+	String submitter;
 	
-	public Joke(String theJoke, String punchline) {
+	public Joke(String theJoke, String punchline, String submitter) {
 		this.theJoke = theJoke;
 		this.punchline = punchline;
+		this.submitter = submitter;
 	}
 	
 	public String getJoke() {
@@ -16,6 +18,10 @@ public class Joke {
 	
 	public String getPunchline() {
 		return punchline;
+	}
+	
+	public String getSubmitter() {
+		return submitter;
 	}
 
 }

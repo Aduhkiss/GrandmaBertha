@@ -25,13 +25,27 @@ public class JokeCommand extends Command {
 		new Thread() {
 			public void run() {
 				try {
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				//embed.clear()
 				m.editMessage(j.getJoke() + "\n\n" + j.getPunchline()).queue();
+				
+				// Then do another one lmao
+				new Thread() {
+					public void run() {
+						try {
+							Thread.sleep(2000);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
+						m.editMessage(j.getJoke() + "\n\n" + j.getPunchline() + "\n\n" + "Submitted by " + j.getSubmitter()).queue();
+					}
+				}.start();
 			}
 		}.start();
 		
