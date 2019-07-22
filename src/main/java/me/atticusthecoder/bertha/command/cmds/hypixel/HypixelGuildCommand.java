@@ -81,7 +81,7 @@ public class HypixelGuildCommand extends Command {
 			tag = info.getTag();
 		}
 		builder.addField("Tag", tag, true);
-		builder.addField("XP", String.valueOf(info.getCoins()), true);
+		builder.addField("XP", String.valueOf(info.getCoinsEver()), true);
 		builder.addField("Size", String.valueOf(info.getMemberSizeLevel()), true);
 		
 		event.getChannel().sendMessage(builder.build()).queue();

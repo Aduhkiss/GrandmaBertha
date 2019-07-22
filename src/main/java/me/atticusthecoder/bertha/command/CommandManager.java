@@ -5,7 +5,9 @@ import java.util.List;
 
 import me.atticusthecoder.bertha.command.cmds.fun.CoinflipCommand;
 import me.atticusthecoder.bertha.command.cmds.fun.EightBallCommand;
+import me.atticusthecoder.bertha.command.cmds.fun.JokeCommand;
 import me.atticusthecoder.bertha.command.cmds.hypixel.HypixelGuildCommand;
+import me.atticusthecoder.bertha.command.cmds.hypixel.HypixelLeaderboardCommand;
 import me.atticusthecoder.bertha.command.cmds.hypixel.HypixelPlayerCommand;
 import me.atticusthecoder.bertha.command.cmds.information.AboutCommand;
 import me.atticusthecoder.bertha.command.cmds.information.HelpCommand;
@@ -45,6 +47,7 @@ public class CommandManager extends ListenerAdapter {
 			// Fun Commands
 			commands.add(new EightBallCommand());
 			commands.add(new CoinflipCommand());
+			commands.add(new JokeCommand());
 			
 			// Interaction Commands
 			commands.add(new HugCommand());
@@ -54,6 +57,7 @@ public class CommandManager extends ListenerAdapter {
 			// Hypixel Commands
 			commands.add(new HypixelPlayerCommand());
 			commands.add(new HypixelGuildCommand());
+			commands.add(new HypixelLeaderboardCommand());
 		});
 	}
 	
@@ -66,6 +70,7 @@ public class CommandManager extends ListenerAdapter {
 			for(Command cmd : commands) {
 				if(event.getMessage().getContentRaw().startsWith(PREFIX + cmd.getName())) {
 					cmd.execute(event);
+					// Log the execution of this command
 				}
 			}
 		});

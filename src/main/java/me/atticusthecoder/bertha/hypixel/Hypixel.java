@@ -15,7 +15,7 @@ public class Hypixel extends Module {
 	public void onLoad() {
 		// Atticus, you seriously CANNOT FORGET TO REMOVE THIS when uploading to GitHub. seriously
 
-		api = new HypixelAPI("uwu i rememberd to remove it lol");
+		api = new HypixelAPI("f2da9dda-299d-4e76-9710-1ca4c5346038");
 	}
 	
 	public HypixelAPI getApi() {

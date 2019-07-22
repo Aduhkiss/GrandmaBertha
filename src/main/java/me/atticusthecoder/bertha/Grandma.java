@@ -6,6 +6,7 @@ import me.atticusthecoder.bertha.command.CommandManager;
 import me.atticusthecoder.bertha.extralisteners.ChatBot;
 import me.atticusthecoder.bertha.extralisteners.MessageLogger;
 import me.atticusthecoder.bertha.hypixel.Hypixel;
+import me.atticusthecoder.bertha.manager.JokeManager;
 import me.atticusthecoder.bertha.music.PlayerControl;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
@@ -26,6 +27,9 @@ public class Grandma {
 	public Hypixel hypixel;
 	public boolean hypixelApiEnabled = true;
 	
+	// Modules that we will be using
+	public JokeManager jokeManager;
+	
 	public Grandma(String TOKEN) {
 		activeServers = 0;
 		try {
@@ -40,6 +44,9 @@ public class Grandma {
 					.addEventListener(new PlayerControl())
 					.addEventListener(new ChatBot())
 					.build();
+			
+			// Create the instances of our modules
+			jokeManager = new JokeManager();
 			
 			System.out.println("Invite Me! " + "https://discordapp.com/oauth2/authorize?client_id=" + APP_ID + "&scope=bot");
 			
