@@ -20,11 +20,11 @@ public class AboutCommand extends Command {
 		e.setColor(Color.GRAY);
 		
 		// Then put the actual content
-		e.appendDescription("Hello! Welcome to the Grandma Bertha bot, coded by AtticusTheCoder#6362.");
+		e.appendDescription("Hello! Welcome to the Grandma Bertha bot, coded by AtticusWasNeverHere#6362.");
 		e.appendDescription("I am a Discord bot that will add all kinds of fun commands into your chatting experience.");
 		e.appendDescription("To see a list of my commands, simply do " + CommandManager.get().PREFIX + "help");
 		
-		//e.appendDescription("Also, I'm open source! You can find my code at `https://github.com/atticusthecoder/GrandmaBertha`");
+		e.appendDescription("Also, I'm open source! You can find my code at `https://github.com/atticusthecoder/GrandmaBertha`");
 		
 		event.getChannel().sendMessage(e.build()).queue();
 	}
